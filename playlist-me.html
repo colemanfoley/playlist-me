@@ -5,6 +5,7 @@
 <body>
 	{{loginButtons}}
 	{{> hello}}
+	{{> showQuestions}}
 </body>
 
 <template name="hello">
@@ -12,4 +13,18 @@
   {{greet}}<br>
   <input id="questionInput"><br>
   <input type="button" class="btn" value="Ask" name="askRecommendation"/>
+</template>
+
+<template name="showQuestions">
+  <h1>Answer a Question</h1>
+  {{#each questions}}
+  {{> question}}
+  {{/each}}
+</template>
+
+<template name="question">
+	<div class="questionContainer">
+		{{text}}
+		{{user.username}}
+	</div>
 </template>
