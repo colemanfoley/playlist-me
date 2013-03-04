@@ -4,12 +4,12 @@
 
 <body>
 	{{loginButtons}}
-  {{> hello}}
+	{{> hello}}
 </body>
 
 <template name="hello">
   <h1>Playlist Me</h1>
-  {{askQuestion}}
-  <input>
+  {{greet}}<br>
+  <input id="questionInput"><br>
   <input type="button" class="btn" value="Ask" name="askRecommendation"/>
 </template>
