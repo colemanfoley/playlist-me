@@ -3,11 +3,13 @@
 </head>
 
 <body>
+	{{loginButtons}}
   {{> hello}}
 </body>
 
 <template name="hello">
   <h1>Playlist Me</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+  {{askQuestion}}
+  <input>
+  <input type="button" class="btn" value="Ask" name="askRecommendation"/>
 </template>

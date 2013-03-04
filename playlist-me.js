@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to playlist-me.";
+  Template.hello.askQuestion = function () {
+    return "Enter a question to get music recommendations.";
   };
 
   Template.hello.events({
