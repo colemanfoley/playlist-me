@@ -12,11 +12,11 @@
   <h1>Playlist Me</h1>
   {{greet}}<br>
   <input id="questionInput"><br>
-  <input type="button" class="btn" value="Ask" name="askRecommendation"/>
+  <input type="button" class="btn ask" value="Ask" name="askRecommendation">
 </template>
 
 <template name="showQuestions">
-  <h1>Answer a Question</h1>
+  <h2>Answer a Question</h2>
   {{#each questions}}
   {{> question}}
   {{/each}}
@@ -26,5 +26,17 @@
 	<div class="questionContainer">
 		<div>{{text}}</div>
 		<div class="name">{{user.username}}</div>
+		<div id="addAnswerContainer">
+			<input class = "answerInput">
+			<input type="button" class="btn answer" value="Answer" name="addAnswer">
+		</div>
+		{{#each answers}}
+			{{> answer}}
+		{{/each}}
 	</div>
+</template>
+
+<template name="answer">
+	<div>{{text}}</div>
+	<div class="name">{{user}}</div>
 </template>
