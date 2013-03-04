@@ -1,12 +1,15 @@
 if (Meteor.isClient) {
   //Initial set-up: specifying which fields accounts-ui should have
   //and making the questions collection.
+
   Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
   });
 
   Questions = new Meteor.Collection("questions");
+
   //A helper that returns a greeting to the intro template.
+
   Template.hello.greet = function () {
     return "Enter a question to get music recommendations.";
   };
@@ -33,6 +36,7 @@ if (Meteor.isClient) {
     //   this.
     // }
   });
+
   Template.showQuestions.questions = function () {
     return Questions.find({});
   };
