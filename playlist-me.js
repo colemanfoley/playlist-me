@@ -27,14 +27,16 @@ if (Meteor.isClient) {
   });
 
   //Handlers for the showQuestions template.
-  Template.showQuestions.events({
-    //This handler should be on each question, not on the whole question template?
-    // 'click .answer' : function () {
-    //   var answer = {};
-    //   answer.user = Meteor.user();
-    //   answer.text = $('.answerInput');
-    //   this.
-    // }
+  Template.question.events({
+    'click .answer' : function () {
+      var answer = {};
+      answer.user = Meteor.user();
+      answer.text = $('.answerInput').val();
+      this.answers.push(answer);
+      Questions.update({_id: this._id},
+        {$push: {answers: {text: $('.answerInput').val(), user:Meteor.user() } } }
+      );
+    }
   });
 
   Template.showQuestions.questions = function () {
