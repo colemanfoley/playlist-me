@@ -36,6 +36,11 @@ if (Meteor.isClient) {
       Questions.update({_id: this._id},
         {$push: {answers: {text: $('.answerInput').val(), user:Meteor.user() } } }
       );
+    },
+
+    'click .showAnswers' : function () {
+      console.log(this);
+      $('.answersList').show();
     }
   });
 
