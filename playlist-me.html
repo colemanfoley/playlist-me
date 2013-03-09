@@ -6,6 +6,7 @@
 	{{loginButtons}}
 	{{> hello}}
 	{{> showQuestions}}
+	{{> rdioTest}}
 </body>
 
 <template name="hello">
@@ -44,4 +45,9 @@
 		<div>{{text}}</div>
 		<div class="name">{{user.username}}</div>
 	</div>
+</template>
+
+<template name="rdioTest">
+	<input type="button" class="rdio btn" value="Play something" name="rdioTest">
+	<div id="placeholder"></div>
 </template>
