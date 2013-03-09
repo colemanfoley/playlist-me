@@ -47,6 +47,22 @@ if (Meteor.isClient) {
   Template.showQuestions.questions = function () {
     return Questions.find({});
   };
+
+  Template.rdioTest.events({
+    'click .getTracks' : function (argument) {
+      Meteor.http.post("http://api.rdio.com/1/", {data: {method: "getTracksForArtist"}}, console.log(result));
+    },
+    'click .play' : function () {
+      $('#placeholder').rdio("GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=");
+      $('#placeholder').bind('ready.rdio', function(e) {
+        $('#placeholder').rdio().play('a171827');
+      });
+    },
+
+    'click .pause' : function () {
+      $('#placeholder').rdio().pause();
+    }
+  });
 }
 
 if (Meteor.isServer) {
