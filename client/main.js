@@ -23,7 +23,6 @@ Template.question.events({
   },
 
   'click .showAnswers' : function () {
-    console.log(this);
     $('.answersList').show();
   }
 });
