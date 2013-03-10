@@ -13,5 +13,9 @@ Template.answer.events({
 
   'click .pause' : function () {
     $('#placeholder').rdio().pause();
+  },
+
+  'click .resume' : function () {
+    $('#placeholder').rdio().play();
   }
 });
