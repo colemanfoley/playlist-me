@@ -1,7 +1,6 @@
 //Handlers for the hello template.
 Template.hello.events({
   'click .ask' : function () {
-    // template data, if any, is available in 'this'
     var question = {};
     question.text = $('#questionInput').val();
     question.user = Meteor.user();
@@ -12,13 +11,15 @@ Template.hello.events({
 
 //Handlers for the showQuestions template.
 Template.question.events({
-  'click .answer' : function () {
+  'click .answer' : function (e) {
     var answer = {};
     answer.user = Meteor.user();
-    answer.text = $('.answerInput').val();
+    var $input = $('.answerInput',$(e.toElement).parent());
+    answer.text = $input.val();
     this.answers.push(answer);
+
     Questions.update({_id: this._id},
-      {$push: {answers: {text: $('.answerInput').val(), user:Meteor.user() } } }
+      {$push: {answers: {text: $input.val(), user:Meteor.user() } } }
     );
   },
 

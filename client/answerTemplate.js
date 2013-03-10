@@ -12,7 +12,6 @@ Template.answer.events({
       });
     }
     else {
-      $('#placeholder').rdio().stop();
       Meteor.http.post("http://localhost:8080", {content: songToSend},function(error, result){
         songToPlay = JSON.parse(result.content).key;
         $('#placeholder').rdio().play(songToPlay);

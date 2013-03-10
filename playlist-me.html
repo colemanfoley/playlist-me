@@ -28,7 +28,7 @@
 		<div>{{text}}</div>
 		<div class="name">{{user.username}}</div>
 		<div id="addAnswerContainer">
-			<input class = "answerInput">
+			<input class="answerInput">
 			<input type="button" class="btn answer" value="Answer" name="addAnswer">
 			<input type="button" class="btn showAnswers" value="Toggle show answers">
 		</div>
@@ -42,7 +42,12 @@
 
 <template name="answer">
 	<div class="answerContainer">
-		<div>{{text}}<input type="button" class="btn play" value="Play" name="playSong"><input type="button" class="pause btn" value="Pause"><input type="button" class="resume btn" value="Resume"></div>
+		<div>
+      {{text}}
+      <input type="button" class="btn play" value="Play" name="playSong">
+      <input type="button" class="pause btn" value="Pause">
+      <input type="button" class="resume btn" value="Resume">
+    </div>
 		<div class="name">{{user.username}}</div>
 	</div>
 </template>
