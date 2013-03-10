@@ -6,12 +6,12 @@
 	{{loginButtons}}
 	{{> hello}}
 	{{> showQuestions}}
-	{{> rdioTest}}
 </body>
 
 <template name="hello">
   <h1>Playlist Me</h1>
   Enter a question to get music recommendations.<br>
+  <div id="placeholder"></div>
   <input id="questionInput"><br>
   <input type="button" class="btn ask" value="Ask" name="askRecommendation">
 </template>
@@ -45,11 +45,4 @@
 		<div>{{text}}<input type="button" class="btn play" value="Play" name="playSong"><input type="button" class="pause btn" value="Pause"><input type="button" class="resume btn" value="Resume"></div>
 		<div class="name">{{user.username}}</div>
 	</div>
-</template>
-
-<template name="rdioTest">
-	<input type="button" class="rdio play btn" value="Play something">
-  <input type="button" class="rdio pause btn" value="Pause">
-  <input type="button" class="rdio getTracks btn" value="Get tracks">
-	<div id="placeholder"></div>
 </template>
