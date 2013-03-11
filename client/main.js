@@ -5,6 +5,7 @@ Template.hello.events({
     question.text = $('#questionInput').val();
     question.user = Meteor.user();
     question.answers = [];
+    question.createdAt = new Date();
     Questions.insert(question);
   }
 });
@@ -17,7 +18,6 @@ Template.question.events({
     var $input = $('.answerInput',$(e.toElement).parent());
     answer.text = $input.val();
     this.answers.push(answer);
-
     Questions.update({_id: this._id},
       {$push: {answers: {text: $input.val(), user:Meteor.user() } } }
     );
@@ -29,5 +29,5 @@ Template.question.events({
 });
 
 Template.showQuestions.questions = function () {
-  return Questions.find({});
+  return Questions.find({}, {sort: {createdAt: -1}});
 };
