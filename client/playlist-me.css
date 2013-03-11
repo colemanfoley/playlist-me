@@ -21,3 +21,7 @@ body {
 .questionContainer {
 	margin-bottom: 10px;
 }
+
+img {
+  height: 20px;
+}

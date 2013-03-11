@@ -6,6 +6,7 @@
   <div class="login">{{loginButtons}}</div>
 	{{> hello}}
 	{{> showQuestions}}
+  <img src="/RdioBlueLogo.png"/>
   <div id="placeholder"></div>
 </body>
 
@@ -29,8 +30,14 @@
 <template name="question">
 	<div class="questionContainer">
 		<div>{{text}}</div>
-		<div class="name">{{user.username}}</div>
-		<div id="addAnswerContainer">
+    <div class="name">
+      {{#if user.username}}
+        {{user.username}}
+      {{else}}
+        Anonymous User
+      {{/if}}
+    </div>
+    <div id="addAnswerContainer">
 			<input class="answerInput">
 			<input type="button" class="btn answer" value="Answer" name="addAnswer">
 		</div>
@@ -49,6 +56,12 @@
       <i class="icon-stop pause"></i>
     </span>
     {{text}}
-		<div class="name">{{user.username}}</div>
+		<div class="name">
+      {{#if user.username}}
+        {{user.username}}
+      {{else}}
+        Anonymous User
+      {{/if}}
+    </div>
 	</div>
 </template>
