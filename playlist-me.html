@@ -6,12 +6,12 @@
   <div class="login">{{loginButtons}}</div>
 	{{> hello}}
 	{{> showQuestions}}
+  <div id="placeholder"></div>
 </body>
 
 <template name="hello">
   <h1>Playlist Me</h1>
   Enter a question to get music recommendations.<br>
-  <div id="placeholder"></div>
   <input id="questionInput"><br>
   <input type="button" class="btn ask" value="Ask" name="askRecommendation">
 </template>
@@ -44,12 +44,11 @@
 
 <template name="answer">
 	<div class="answerContainer">
+    <span class ="playbackControls">
+      <i class="icon-play-circle play"></i>
+      <i class="icon-stop pause"></i>
+    </span>
     {{text}}
-		<div class ="playbackControls">
-      <input type="button" class="btn play" value="Play" name="playSong">
-      <input type="button" class="pause btn" value="Pause">
-      <input type="button" class="resume btn" value="Resume">
-    </div>
 		<div class="name">{{user.username}}</div>
 	</div>
 </template>
