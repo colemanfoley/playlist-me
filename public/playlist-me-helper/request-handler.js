@@ -20,11 +20,12 @@ exports.requestHandler = function (request, response) {
 
     request.on('end', function (argument) {
       var parsedQuery = JSON.parse(fullQuery);
-      console.log(parsedQuery.queryType);
-      console.log(parsedQuery.key);
-      globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
-        response.end(JSON.stringify(arguments[1].result.results[0]));
-      });
+
+      if (parsedQuery.queryType === "play") {
+        globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
+          response.end(JSON.stringify(arguments[1].result.results[0]));
+        });
+      };
     });
   };
 };
