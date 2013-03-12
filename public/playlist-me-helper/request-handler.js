@@ -11,7 +11,7 @@ exports.requestHandler = function (request, response) {
     response.writeHead(statusCode, headers);
     response.end();
   }
-  else {
+  else if(request.method === "POST") {
     request.on('data', function(chunk) {
       fullQuery += chunk.toString();
     });
@@ -19,7 +19,10 @@ exports.requestHandler = function (request, response) {
     response.writeHead(statusCode, headers);
 
     request.on('end', function (argument) {
-      globals.r.makeRequest('search', {query: fullQuery, types: 'Track'}, function() {
+      var parsedQuery = JSON.parse(fullQuery);
+      console.log(parsedQuery.queryType);
+      console.log(parsedQuery.key);
+      globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
         response.end(JSON.stringify(arguments[1].result.results[0]));
       });
     });

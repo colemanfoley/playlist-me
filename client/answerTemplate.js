@@ -5,14 +5,14 @@ Template.answer.events({
     if ($('#placeholder').is(':empty')) {
       $('#placeholder').rdio("GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=");
       $('#placeholder').bind('ready.rdio', function(e) {
-        Meteor.http.post("http://localhost:8080", {content: songToSend},function(error, result){
+        Meteor.http.post("http://localhost:8080", {data: {key: songToSend, queryType: "play"}},function(error, result){
           songToPlay = JSON.parse(result.content).key;
           $('#placeholder').rdio().play(songToPlay);
         });
       });
     }
     else {
-      Meteor.http.post("http://localhost:8080", {content: songToSend},function(error, result){
+      Meteor.http.post("http://localhost:8080", {data: {key: songToSend, queryType: "play"}},function(error, result){
         songToPlay = JSON.parse(result.content).key;
         $('#placeholder').rdio().play(songToPlay);
       });
