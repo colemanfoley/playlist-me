@@ -15,7 +15,7 @@ Template.question.events({
   'click .answer' : function (e) {
     var $input = $('.answerInput',$(e.toElement).parent());
     Questions.update({_id: this._id},
-      {$push: {answers: {text: $input.val(), user:Meteor.user(), createdAt: new Date()} } }
+      {$push: {answers: {text: $input.val(), user:Meteor.user(), createdAt: Date.now()} } }
     );
   },
 
