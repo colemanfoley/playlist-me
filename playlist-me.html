@@ -54,6 +54,7 @@
     <span class ="playbackControls">
       <i class="icon-play-circle play"></i>
       <i class="icon-stop pause"></i>
+      <input type="button" class="search btn" value="Search">
     </span>
     {{text}}
 		<div class="name">
@@ -64,4 +65,14 @@
       {{/if}}
     </div>
 	</div>
+  <div class="answerChoice">
+    {{#each searchResults}}
+      {{> searchResult}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="searchResult">
+  {{artist}}
+  {{name}}
 </template>

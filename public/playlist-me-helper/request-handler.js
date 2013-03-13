@@ -25,6 +25,12 @@ exports.requestHandler = function (request, response) {
         globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
           response.end(JSON.stringify(arguments[1].result.results[0]));
         });
+      }
+
+      else if (parsedQuery.queryType === "search") {
+        globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
+          response.end(JSON.stringify(arguments[1].result.results));
+        });
       };
     });
   };

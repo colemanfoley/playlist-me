@@ -21,5 +21,25 @@ Template.answer.events({
 
   'click .pause' : function () {
     $('#placeholder').rdio().pause();
+  },
+
+  'click .search' : function (e) {
+    var queryToSend = this.text;
+    var searchResults = "";
+    Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){
+      if(error){
+        console.log(error);
+      }
+      searchResults = JSON.parse(result.content);
+      var $container = $('.answerChoice',$(e.toElement).parent().parent());
+      $container.html("");
+      _.each(searchResults, function(object){
+        SearchResultsCollection.insert(object);
+      });
+    });
   }
 });
+
+Template.answer.searchResults = function(){
+  return SearchResultsCollection.find({});
+};
