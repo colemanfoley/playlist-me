@@ -24,6 +24,7 @@ Template.answer.events({
   },
 
   'click .search' : function (e) {
+    console.log(this.createdAt);
     var queryToSend = this.text;
     var searchResults = "";
     Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){

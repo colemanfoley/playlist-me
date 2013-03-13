@@ -66,13 +66,18 @@
     </div>
 	</div>
   <div class="answerChoice">
-    {{#each searchResults}}
-      {{> searchResult}}
-    {{/each}}
+    {{#if searchResults}}
+      {{#each searchResults}}
+        {{> searchResult}}
+      {{/each}}
+    {{/if}}
   </div>
 </template>
 
 <template name="searchResult">
-  {{artist}}
-  {{name}}
+  <div class="searchResult">
+    <span>{{artist}}</span>
+    <span>-</span>
+    <span>{{name}}</span>
+  </div>
 </template>
