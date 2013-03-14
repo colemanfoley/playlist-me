@@ -7,3 +7,4 @@ Questions = new Meteor.Collection("questions");
 SearchResultsCollection = new Meteor.Collection("searchResultsCollection");
 Session.set("showHello", true);
 Session.set("showQuestionList", false);
+Session.set("questionToShow", null);
