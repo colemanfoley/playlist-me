@@ -6,6 +6,11 @@ Template.hello.events({
     question.answers = [];
     question.createdAt = new Date();
     Questions.insert(question);
+  },
+  'click #titleText': function() {
+  	Session.set("showHello", true);
+  	Session.set("showQuestionList", false);
+  	Session.set("questionToShow", null);
   }
 });
 
