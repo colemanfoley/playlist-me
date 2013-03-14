@@ -22,6 +22,9 @@ Template.questionList.events({
 	'click #toggleDisplayQuestions': function () {
 		Session.set("showQuestionList", true);
 		Session.set("showHello", false);
+	},
+	'click #showAllQuestions': function () {
+		Session.set("questionToShow", null);
 	}
 });
 
