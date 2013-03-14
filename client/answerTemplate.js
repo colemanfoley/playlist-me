@@ -24,27 +24,29 @@ Template.answer.events({
   },
 
   'click .search' : function (e) {
-    this.collection = new Meteor.Collection(this.createdAt.toString());
-    console.log(this.collection);
     var queryToSend = this.text;
     var searchResults = "";
-    var that = this;
     Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){
-      console.log("That, when the post is first entered: " + that);
       if(error){
         console.log(error);
       }
       searchResults = JSON.parse(result.content);
-      var $container = $('.answerChoice',$(e.toElement).parent().parent());
-      $container.html("");
-      _.each(searchResults, function(object){
-        console.log("The collection is: " + that.collection);
-        SearchResultsCollection.insert(object);
-      }, that);
+      var d = {
+        query: queryToSend,
+        result: searchResults
+      }
+
+      SearchResultsCollection.insert(d);
+
+      Session.set("searchQuery", queryToSend);
     });
   }
 });
 
 Template.answer.searchResults = function(){
-  return SearchResultsCollection.find({});
+  var currentSearchQuery = Session.get("searchQuery");
+  var result = SearchResultsCollection.find({
+    query: currentSearchQuery
+  });
+  return result
 };

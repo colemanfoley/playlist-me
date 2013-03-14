@@ -1,4 +1,3 @@
-//Handlers for the hello template.
 Template.hello.events({
   'click .ask' : function () {
     var question = {};
@@ -10,17 +9,12 @@ Template.hello.events({
   }
 });
 
-//Handlers for the showQuestions template.
 Template.question.events({
   'click .answer' : function (e) {
     var $input = $('.answerInput',$(e.toElement).parent());
     Questions.update({_id: this._id},
       {$push: {answers: {text: $input.val(), user:Meteor.user(), createdAt: Date.now()} } }
     );
-  },
-
-  'click .showAnswers' : function () {
-    $('.answersList').show();
   }
 });
 
