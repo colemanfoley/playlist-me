@@ -1,0 +1,31 @@
+<template name="answer">
+	<div class="answerContainer">
+    <span class ="playbackControls">
+      <i class="icon-play-circle play"></i>
+      <i class="icon-stop pause"></i>
+      <input type="button" class="search btn" value="Search">
+    </span>
+    {{text}}
+		<div class="name">
+      {{#if user.username}}
+        {{user.username}}
+      {{else}}
+        Anonymous User
+      {{/if}}
+    </div>
+	</div>
+  <div class="answerChoice">
+      {{#each searchResults}}
+        {{> searchResult}}
+      {{/each}}
+  </div>
+</template>
+
+<template name="searchResult">
+  <div class="searchResult">
+    {{#each result}}
+    <span>{{artist}}</span>
+    <span>{{name}}</span>
+    {{/each}}
+  </div>
+</template>

@@ -1,0 +1,31 @@
+<template name="showQuestions">
+  <h3>Answer a Question</h3>
+  Each answer has to be just one song. When a user chooses play on your answer,
+  the app's best guess for what you mean will be played.
+  <h4>Questions</h4>
+  {{#each questions}}
+  {{> question}}
+  {{/each}}
+</template>
+
+<template name="question">
+	<div class="questionContainer">
+		<div>{{text}}</div>
+    <div class="name">
+      {{#if user.username}}
+        {{user.username}}
+      {{else}}
+        Anonymous User
+      {{/if}}
+    </div>
+    <div id="addAnswerContainer">
+			<input class="answerInput">
+			<input type="button" class="btn answer" value="Answer" name="addAnswer">
+		</div>
+		<div class="answersList">
+      {{#each answers}}
+        {{> answer}}
+      {{/each}}
+		</div>
+	</div>
+</template>
