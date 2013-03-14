@@ -7,6 +7,10 @@ Template.question.events({
   }
 });
 
-Template.showQuestions.questions = function () {
+Template.questionList.questions = function () {
   return Questions.find({}, {sort: {createdAt: -1}});
 };
+
+Template.questionList.showQuestionList = function () {
+	return Session.get("showQuestionList");
+}

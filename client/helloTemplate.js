@@ -8,3 +8,7 @@ Template.hello.events({
     Questions.insert(question);
   }
 });
+
+Template.hello.show = function () {
+	return Session.get("showHello");
+};

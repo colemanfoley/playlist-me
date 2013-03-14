@@ -1,7 +1,10 @@
 <template name="hello">
+  {{#if show}}
+
   <div class="login">{{loginButtons}}</div>
   <h1>Playlist Me</h1>
   Enter a question to get music recommendations.<br>
   <textarea id="questionInput" rows="3" cols="90"></textarea>
   <input type="button" class="btn ask" value="Ask" name="askRecommendation">
+  {{/if}}
 </template>
