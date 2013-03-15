@@ -24,10 +24,11 @@
 </template>
 
 <template name="searchResult">
-  <div class="searchResult">
     {{#each result}}
-    <span>{{artist}}</span>
-    <span>{{name}}</span>
+      <div class="searchResult">
+        <span>{{artist}} -</span>
+        <span>{{name}}</span>
+      </div>
     {{/each}}
   </div>
 </template>
