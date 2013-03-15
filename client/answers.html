@@ -14,11 +14,13 @@
       {{/if}}
     </div>
 	</div>
+  {{#if currentAnswer}}
   <div class="answerChoice">
       {{#each searchResults}}
         {{> searchResult}}
       {{/each}}
   </div>
+  {{/if}}
 </template>
 
 <template name="searchResult">

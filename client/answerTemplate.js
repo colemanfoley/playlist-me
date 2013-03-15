@@ -24,8 +24,10 @@ Template.answer.events({
   },
 
   'click .search' : function (e) {
+    Session.set("currentAnswer", this.createdAt);
     var queryToSend = this.text;
     var searchResults = "";
+    SearchResultsCollection.remove({query: queryToSend})
     Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){
       if(error){
         console.log(error);
@@ -49,4 +51,8 @@ Template.answer.searchResults = function(){
     query: currentSearchQuery
   });
   return result
+};
+
+Template.answer.currentAnswer = function () {
+  return Session.equals("currentAnswer", this.createdAt);
 };
