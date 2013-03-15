@@ -31,3 +31,7 @@ img {
 	cursor: hand;
 	cursor: pointer;
 }
+
+#questionInput {
+	width: 600px;
+}
