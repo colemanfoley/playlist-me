@@ -13,9 +13,7 @@
     </div>
 
     <div id="addAnswerContainer">
-			<input class="answerInput">
       <input class="searchInput">
-			<input type="button" class="btn answer" value="Answer" name="addAnswer">
       <input type="button" class="search btn" value="Search for a song to add">
       <div class="searchResultsContainer">
         {{#each searchResults}}
@@ -25,6 +23,7 @@
 		</div>
 
 		<div class="answersList">
+      <h4>Answers</h4>
       {{#each answers}}
         {{> answer}}
       {{/each}}
