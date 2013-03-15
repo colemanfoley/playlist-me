@@ -9,7 +9,7 @@ Template.hello.events({
   },
   'click #titleText': function() {
   	Session.set("showHello", true);
-    Session.set("showQuestionList", true);
+    Session.set("showQuestionList", false);
   	Session.set("questionToShow", null);
     Session.set("searchQuery", null);
   }

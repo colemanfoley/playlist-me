@@ -6,7 +6,7 @@ Accounts.ui.config({
 Questions = new Meteor.Collection("questions");
 SearchResultsCollection = new Meteor.Collection("searchResultsCollection");
 Session.set("showHello", true);
-Session.set("showQuestionList", true);
+Session.set("showQuestionList", false);
 Session.set("questionToShow", null);
 Session.set("currentAnswer", null);
 Session.set("currentSearchQuery", null);
