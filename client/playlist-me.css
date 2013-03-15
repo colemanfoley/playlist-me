@@ -25,9 +25,14 @@ body {
 img {
   height: 20px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .clickable {
 	cursor: hand;
 	cursor: pointer;
+}
+
+#questionInput {
+	width: 600px;
 }
