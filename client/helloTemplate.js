@@ -11,6 +11,7 @@ Template.hello.events({
   	Session.set("showHello", true);
   	Session.set("showQuestionList", false);
   	Session.set("questionToShow", null);
+    Session.set("searchQuery", null);
   }
 });
 
