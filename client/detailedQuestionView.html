@@ -17,7 +17,7 @@
       <input type="button" class="search btn" value="Search for a song to add">
       <div class="searchResultsContainer">
         {{#each searchResults}}
-          {{> realSearchResult}}
+          {{> searchResult}}
         {{/each}}
       </div>
 		</div>
@@ -32,11 +32,12 @@
 	</div>
 </template>
 
-<template name="realSearchResult">
+<template name="searchResult">
     {{#each result}}
       <div class="searchResult">
         <span>{{artist}} -</span>
         <span>{{name}}</span>
+        <input type="button" class="btn answer" value="Make this song your answer.">
       </div>
     {{/each}}
   </div>
