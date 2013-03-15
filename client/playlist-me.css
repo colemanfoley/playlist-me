@@ -26,3 +26,8 @@ img {
   height: 20px;
   margin-bottom: 10px;
 }
+
+.clickable {
+	cursor: hand;
+	cursor: pointer;
+}
