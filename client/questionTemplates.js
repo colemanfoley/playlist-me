@@ -7,31 +7,25 @@ Template.question.events({
     Questions.update({_id: this._id},
       {$push: {answers: {text: $input.val(), user:Meteor.user(), createdAt: Date.now()} } }
     );
+  },
+  'click .search' : function (e) {
+    Session.set("currentAnswer", this.createdAt);
+    var queryToSend = this.text;
+    var searchResults = "";
+    SearchResultsCollection.remove({query: queryToSend})
+    Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){
+      if(error){
+        console.log(error);
+      }
+      searchResults = JSON.parse(result.content);
+      var d = {
+        query: queryToSend,
+        result: searchResults
+      }
+
+      SearchResultsCollection.insert(d);
+
+      Session.set("searchQuery", queryToSend);
+    });
   }
 });
-
-Template.questionList.questions = function () {
-  return Questions.find({}, {sort: {createdAt: -1}});
-};
-
-Template.questionList.showQuestionList = function () {
-	return Session.get("showQuestionList");
-};
-
-Template.questionList.events({
-	'click #toggleDisplayQuestions': function () {
-		Session.set("showQuestionList", true);
-		Session.set("showHello", false);
-	},
-	'click #showAllQuestions': function () {
-		Session.set("questionToShow", null);
-	}
-});
-
-Template.questionList.questionToShow = function () {
-	return Session.get("questionToShow");
-};
-
-Template.questionList.showOneQuestion = function () {
-	return Questions.find({_id: Session.get("questionToShow")});
-};
