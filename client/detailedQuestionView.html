@@ -33,6 +33,7 @@
 </template>
 
 <template name="searchResult">
+  {{#if showSearchResults}}
     {{#each result}}
       <div class="searchResult">
         <i class="icon-plus-sign answer"></i>
@@ -40,5 +41,6 @@
         <span>{{name}}</span>
       </div>
     {{/each}}
+  {{/if}}
   </div>
 </template>

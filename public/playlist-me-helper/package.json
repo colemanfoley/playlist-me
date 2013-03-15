@@ -1,0 +1,11 @@
+{
+  "name": "playlist-me-helper",
+  "subdomain": "playlist-me-helper",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "0.8.x"
+  }
+}

@@ -19,6 +19,7 @@ Template.question.events({
 	      };
 	      SearchResultsCollection.insert(d);
 	      Session.set("searchQuery", queryToSend);
+	      Session.set("currentSearchQuery", queryToSend);
     	}
     );
   }
