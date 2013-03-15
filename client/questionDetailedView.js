@@ -2,12 +2,7 @@ Template.question.events({
 	'click .questionTitle' : function (){
 		Session.set("questionToShow", this._id);
 	},
-  'click .answer' : function (e) {
-    var $input = $('.answerInput',$(e.toElement).parent());
-    Questions.update({_id: this._id},
-      {$push: {answers: {text: $input.val(), user:Meteor.user(), createdAt: Date.now()} } }
-    );
-  },
+
   'click .search' : function (e) {
     var queryToSend = $('.searchInput').val();
     var searchResults = "";
