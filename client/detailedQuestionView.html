@@ -14,9 +14,13 @@
 
     <div id="addAnswerContainer">
 			<input class="answerInput">
+      <input class="searchInput">
 			<input type="button" class="btn answer" value="Answer" name="addAnswer">
       <input type="button" class="search btn" value="Search for a song to add">
-      <div class = "searchResultsContainer">
+      <div class="searchResultsContainer">
+        {{#each searchResults}}
+          {{> realSearchResult}}
+        {{/each}}
       </div>
 		</div>
 
@@ -27,4 +31,14 @@
 		</div>
 
 	</div>
+</template>
+
+<template name="realSearchResult">
+    {{#each result}}
+      <div class="searchResult">
+        <span>{{artist}} -</span>
+        <span>{{name}}</span>
+      </div>
+    {{/each}}
+  </div>
 </template>

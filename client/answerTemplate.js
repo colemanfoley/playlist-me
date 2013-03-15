@@ -28,7 +28,8 @@ Template.answer.events({
     var queryToSend = this.text;
     var searchResults = "";
     SearchResultsCollection.remove({query: queryToSend})
-    Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}}, function(error, result){
+    Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}},
+      function(error, result){
       if(error){
         console.log(error);
       }
@@ -50,7 +51,7 @@ Template.answer.searchResults = function(){
   var result = SearchResultsCollection.find({
     query: currentSearchQuery
   });
-  return result
+  return result;
 };
 
 Template.answer.currentAnswer = function () {
