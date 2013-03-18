@@ -31,13 +31,11 @@ img {
 .clickable {
 	cursor: hand;
 	cursor: pointer;
+	color: #19558d;
 }
 
 #questionInput {
 	width: 600px;
-}
-h3, h4 {
-	color: #19558d;
 }
 
 #questionInstruction {
