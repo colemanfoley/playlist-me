@@ -36,3 +36,10 @@ img {
 #questionInput {
 	width: 600px;
 }
+h3, h4 {
+	color: #19558d;
+}
+
+#questionInstruction {
+	color: black;
+}
