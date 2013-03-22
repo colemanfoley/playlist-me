@@ -1,5 +1,5 @@
 {
-  "packages": {
-    "font-awesome": {}
-  }
+    "meteor": {
+        "tag": "v0.5.7"
+    }
 }

@@ -7,7 +7,7 @@ Template.question.events({
     var queryToSend = $('.searchInput').val();
     var searchResults = "";
     SearchResultsCollection.remove({query: queryToSend});
-    Meteor.http.post("http://localhost:8080", {data: {key: queryToSend, queryType: "search"}},
+    Meteor.http.post("http://playlist-me-helper.nodejitsu.com:80", {data: {key: queryToSend, queryType: "search"}},
     	function(error, result){
 	      if(error){
 	        console.log(error);
