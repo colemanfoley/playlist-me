@@ -2,10 +2,19 @@ Template.answer.events({
   'click .play' : function () {
     var songToPlay = this.key;
     if ($('#placeholder').is(':empty')) {
-      $('#placeholder').rdio("GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=");
-      $('#placeholder').bind('ready.rdio', function(e) {
-        $('#placeholder').rdio().play(songToPlay);
-      });
+    var playbackToken = "";
+      Meteor.http.post("http://playlist-me-helper.nodejitsu.com:80", {data: {queryType: "getPlaybackToken"}},
+        function(error, result){
+          if(error){
+            console.log(error);
+          }
+          var playbackToken = JSON.parse(result.content)[1].result;
+          $('#placeholder').rdio(playbackToken);
+          $('#placeholder').bind('ready.rdio', function(e) {
+            $('#placeholder').rdio().play(songToPlay);
+          });
+        }
+      );
     }
     else {
       $('#placeholder').rdio().play(songToPlay);

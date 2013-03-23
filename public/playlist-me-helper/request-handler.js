@@ -31,6 +31,11 @@ exports.requestHandler = function (request, response) {
         globals.r.makeRequest('search', {query: parsedQuery.key, types: 'Track'}, function() {
           response.end(JSON.stringify(arguments[1].result.results));
         });
+      }
+      else if (parsedQuery.queryType === "getPlaybackToken") {
+        globals.r.makeRequest('getPlaybackToken', {domain: "playlist-me.meteor.com"}, function() {
+          response.end(JSON.stringify(arguments));
+        });
       };
     });
   };
