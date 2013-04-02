@@ -38,10 +38,6 @@ img {
 	width: 600px;
 }
 
-#questionInstruction {
-	color: black;
-}
-
 .successFlash {
 	color: green;
 	display: none;
