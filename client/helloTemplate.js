@@ -7,6 +7,10 @@ Template.hello.events({
     question.answers = [];
     question.createdAt = new Date();
     Questions.insert(question);
+    $('#questionInput').val("");
+    $('.successFlash').delay(500).fadeIn('normal', function() {
+      $(this).delay(1000).fadeOut();
+    });
   },
   'click #titleText': function() {
   	Session.set("showHello", true);
