@@ -1,7 +1,11 @@
+<!-- This template gives a brief introduction to the app and prompts the user to ask or answer a question. -->
 <template name="hello">
+
+	<!-- Meteor's loginButtons package. -->
   <div class="login">{{loginButtons}}</div>
   <h3 id="titleText" class="clickable">Playlist Me</h3>
 
+  <!-- This HTML is enclosed in a conditional so it can be hidden and shown. -->
   {{#if show}}
 		<p>
 			The world is waiting to build you a playlist.
@@ -12,6 +16,7 @@
 	  <input type="button" class="btn ask" value="Ask" name="askRecommendation">
 
 		<div class="successFlash">Your question was added successfully!</div>
+
 		<h4>
 			Wanna answer other people's questions?
 		</h4>

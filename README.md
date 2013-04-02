@@ -13,3 +13,5 @@ Playlist Me does not yet work with Meteor 0.5.8. It includes a smart.json file w
 1. Clone the repository.
 2. Install [Meteorite](https://github.com/oortcloud/meteorite).
 2. Start the app up with `mrt`.
+
+Note: The client is set up to make requests to an instance of the node server running on nodejitsu, but if you want to take a look at the code, it's under public/playlist-me-helper.

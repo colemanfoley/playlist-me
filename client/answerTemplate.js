@@ -1,7 +1,7 @@
 //These are the listeners for the answer template.
 Template.answer.events({
   //When play is clicked, it checks if there is already a placeholder, and adds one if there isn't.
-  //Then it calls the play method on the plachodler.
+  //Then it calls the play method on the placeholder.
   'click .play' : function () {
     var songToPlay = this.key;
     if ($('#placeholder').is(':empty')) {

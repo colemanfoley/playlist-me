@@ -1,3 +1,4 @@
+//I make calls on this object whenever I need to get something from Rdio.
 var Rdio = require('rdio-node').Rdio;
 exports.r = new Rdio({
   consumerKey: 'ar4rzrs9vetnf8gq5rmw4avb'

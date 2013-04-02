@@ -1,10 +1,12 @@
 <head>
   <title>Playlist Me</title>
 </head>
-
 <body>
+	<!-- The hello template contains a brief introduction to the app and a call to ask or answer a question. -->
 	{{> hello}}
+	<!-- questionList is a list of all questions that have been asked, in reverse chronological order. -->
 	{{> questionList}}
   <img id="rdioLogo" src="/RdioBlueLogo.png"/>
+  <!-- This is used to enable Rdio playback. -->
   <div id="placeholder"></div>
 </body>
