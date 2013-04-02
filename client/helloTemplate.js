@@ -1,3 +1,4 @@
+//The hello template displays
 Template.hello.events({
   'click .ask' : function () {
     var question = {};
