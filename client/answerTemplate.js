@@ -1,8 +1,11 @@
+//These are the listeners for the answer template.
 Template.answer.events({
+  //When play is clicked, it checks if there is already a placeholder, and adds one if there isn't.
+  //Then it calls the play method on the plachodler.
   'click .play' : function () {
     var songToPlay = this.key;
     if ($('#placeholder').is(':empty')) {
-    var playbackToken = "";
+      var playbackToken = "";
       Meteor.http.post("http://playlist-me-helper.nodejitsu.com:80", {data: {queryType: "getPlaybackToken"}},
         function(error, result){
           if(error){
@@ -20,7 +23,7 @@ Template.answer.events({
       $('#placeholder').rdio().play(songToPlay);
     };
   },
-
+  //Simply calls the pause method on the placeholder. This pauses whatever song is currently playing.
   'click .pause' : function () {
     $('#placeholder').rdio().pause();
   }
