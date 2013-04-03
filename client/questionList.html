@@ -1,7 +1,9 @@
 <!-- This is the template for the list of all questions, which is made up of individual question views. -->
 <template name="questionList">
   <!-- Clicking View All Questions takes the user to the question list view. -->
-  <h4 id="toggleDisplayQuestions" class="clickable">View All Questions</h4>
+  {{#unless showQuestionList}}
+    <h4 id="toggleDisplayQuestions" class="clickable">View All Questions</h4>
+  {{/unless}}
   <!--
   Checks if the Session variable is currently indicating that the question list should be displayed. 
   If it is, just the title of each question is displayed. Else, the currently selected question is 
