@@ -42,3 +42,7 @@ img {
 	color: green;
 	display: none;
 }
+
+#ask {
+	display: block;
+}

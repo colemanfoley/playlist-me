@@ -1,6 +1,6 @@
 //The hello template displays
 Template.hello.events({
-  'click .ask' : function () {
+  'click #ask' : function () {
     var question = {};
     question.text = $('#questionInput').val();
     question.user = Meteor.user();
