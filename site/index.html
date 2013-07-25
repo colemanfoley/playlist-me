@@ -4,30 +4,27 @@
   <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
-	<div name="introduction">
+	<header id="introduction">
 		<h3 id="titleText" class="clickable">Playlist Me</h3>
 		<p>
 			The world is waiting to build you a playlist.
 		</p>
-
+	</header>
+	<div id="questionList">
 		<h4 id="questionInstruction">Enter a question, and get recommendations from other people.</h4>
 		<form id="addQuestion" action="#">
 			<textarea id="questionInput" rows="3" cols="200"></textarea>
 			<input type="button" class="btn" value="Ask" name="askRecommendation" id="ask">
 		</form>
-
 		<div class="successFlash">Your question was added successfully!</div>
-
 		<h4>
 			Wanna answer other people's questions?
 		</h4>
 	</div>
-	<div id="questionList">
-		<div class="questionTitle clickable">Question Title</div>
-	</div>
   <img id="rdioLogo" src="img/RdioBlueLogo.png"/>
   <!-- This is used to enable Rdio playback. -->
   <div id="placeholder"></div>
+
   <script id="questionSummaryTemplate" type="text/template">
 		<div class="questionTitle clickable"><%= title %></div>
   </script>

@@ -7,5 +7,14 @@ app.QuestionView = Backbone.View.extend({
 	render: function() {
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
+	},
+
+	events: {
+		'click .delete': 'deleteQuestion'
+	},
+
+	deleteQuestion: function() {
+		this.model.destroy();
+		this.remove();
 	}
 });
