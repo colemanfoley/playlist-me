@@ -1,0 +1,48 @@
+body {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.login {
+  float: right;
+  margin-right: 180px;
+}
+
+.name {
+	font-weight: bold;
+}
+
+.answerContainer {
+	text-indent: 20px;
+	border-bottom: solid;
+	border-width: thin;
+}
+
+.questionContainer {
+	margin-bottom: 10px;
+}
+
+img {
+  height: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.clickable {
+	cursor: hand;
+	cursor: pointer;
+	color: #19558d;
+}
+
+#questionInput {
+	width: 600px;
+}
+
+.successFlash {
+	color: green;
+	display: none;
+}
+
+#ask {
+	display: block;
+}

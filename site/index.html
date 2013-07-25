@@ -4,13 +4,36 @@
   <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
-  <img id="rdioLogo" src="public/RdioBlueLogo.png"/>
+	<div name="introduction">
+		<h3 id="titleText" class="clickable">Playlist Me</h3>
+		<p>
+			The world is waiting to build you a playlist.
+		</p>
+
+		<h4 id="questionInstruction">Enter a question, and get recommendations from other people.</h4>
+		<form id="addQuestion" action="#">
+			<textarea id="questionInput" rows="3" cols="200"></textarea>
+			<input type="button" class="btn" value="Ask" name="askRecommendation" id="ask">
+		</form>
+
+		<div class="successFlash">Your question was added successfully!</div>
+
+		<h4>
+			Wanna answer other people's questions?
+		</h4>
+	</div>
+	<div id="questionList">
+		<div class="questionTitle clickable">Question Title</div>
+	</div>
+  <img id="rdioLogo" src="img/RdioBlueLogo.png"/>
   <!-- This is used to enable Rdio playback. -->
   <div id="placeholder"></div>
-
-  <script src="js/lib/jquery.min.js"></script>
-  <script src="js/lib/underscore-min.js"></script>
-  <script src="js/lib/backbone-min.js"></script>
+  <script id="questionSummaryTemplate" type="text/template">
+		<div class="questionTitle clickable"><%= title %></div>
+  </script>
+  <script src="js/lib/jquery-1.9.0.js"></script>
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/lib/backbone.js"></script>
   <script src="js/models/question.js"></script>
   <script src="js/collections/questions.js"></script>
   <script src="js/views/question.js"></script>
