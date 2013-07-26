@@ -29,6 +29,16 @@ app.get('/api', function(request, response) {
 	response.send('API request sent');
 });
 
+app.get('/api/questions', function(request, response) {
+	return QuestionModel.find(function(error, questions) {
+		if(!error){
+			return response.send(questions);
+		} else {
+			return console.log(error);
+		}
+	});
+});
+
 var Question = new mongoose.Schema({
 	text: String,
 	user: String,
