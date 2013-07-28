@@ -39,6 +39,20 @@ app.get('/api/questions', function(request, response) {
 	});
 });
 
+app.post('/api/questions', function(request, response){
+	var question = new QuestionModel({
+		text: request.body.text,
+	});
+	question.save(function(error) {
+		if(!error) {
+			return console.log('created');
+		} else {
+			return console.log(error)
+		}
+	});
+	return response.send(question);
+});
+
 var Question = new mongoose.Schema({
 	text: String,
 	user: String,
